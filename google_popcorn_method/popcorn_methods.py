@@ -146,7 +146,8 @@ def jobs_page():
 
 def case_studies():
     driver.get(locators.popcorn_case_studies_url)
-    if driver.current_url == locators.popcorn_case_studies_url and driver.current_url == locators.popcorn_case_studies_title:
+    if driver.current_url == locators.popcorn_case_studies_url and driver.title == locators.popcorn_case_studies_title:
+        sleep(3)
         print(f'CASE STUDIES page is displayed')
         print(f'{locators.app} Case Studies url {locators.popcorn_case_studies_url}, Case studies {locators.popcorn_case_studies_title}')
     else:
@@ -297,7 +298,7 @@ def tearDown():
 
 
 setUp()
-verify_service_page()
+# verify_service_page()
 case_studies()
-jobs_page()
-tearDown()
+# jobs_page()
+# tearDown()
